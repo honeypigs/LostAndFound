@@ -5,8 +5,10 @@ html,header,footer,div,span,p,nav,body{margin:0;padding:0;font-size:14px;font-fa
 nav{position:fixed;box-sizing:border-box;width:100%;height:3.167rem;background-color:#f5f5f5;border-bottom:1px solid #E5E5E5;}nav .choice{height:3.167rem;text-align:center;font-size:1.167rem;color:#707070;line-height:3.167rem;}
 nav .list{visibility:hidden;position:absolute;list-style:none;width:100%;top:3.167rem;background-color:#fff;padding:0;margin:0;}nav .list .list-item{display:block;text-align:center;box-sizing:border-box;height:3.75rem;font-size:1.167rem;line-height:3.75rem;border-bottom:1px solid #e5e5e5;}
 nav .list .list-item:hover{color:#37b1fe;}
-section{box-sizing:border-box;overflow:hidden;width:90%;margin:0 auto;border-bottom:1px solid #E5E5E5;}section .headImg{box-sizing:border-box;display:block;float:left;margin-top:1rem;width:16%;border:1px solid #C6CCD5;border-radius:50%;}
-section .info{float:right;margin-top:1.333rem;width:82%;}section .info .name{display:inline-block;font-size:1.25rem;color:#434340;}
-section .info .time{display:inline-block;float:right;font-size:1rem;color:#9b9b9b;}
-section .info .user{display:block;margin-top:0.5rem;font-size:0.85rem;color:#9b9b9b;clear:both;}
-section .info .mainInfo{margin-top:0.8rem;font-size:0.95rem;line-height:1.5rem;margin-bottom:0.8rem;}
+.section{display:block;box-sizing:border-box;overflow:hidden;width:90%;margin:0 auto;border-bottom:1px solid #E5E5E5;color:black;}.section .headImg{box-sizing:border-box;display:block;float:left;margin-top:1rem;width:16%;border:1px solid #C6CCD5;border-radius:50%;}
+.section .info{float:right;margin-top:1.333rem;width:82%;}.section .info .name{display:inline-block;font-size:1.25rem;color:#434340;}
+.section .info .time{display:inline-block;float:right;font-size:1rem;color:#9b9b9b;}
+.section .info .user{display:block;margin-top:0.5rem;font-size:0.85rem;color:#9b9b9b;clear:both;}
+.section .info .mainInfo{margin-top:0.8rem;font-size:1rem;line-height:1.5rem;margin-bottom:0.8rem;}
+footer{position:fixed;bottom:0;width:100%;height:4.42rem;border-top:1px solid #E5E5E5;background-color:white;}footer .bottomNav{display:block;float:left;width:33%;font-size:1rem;height:4.42rem;color:#48B8FD;text-align:center;text-decoration:none;}footer .bottomNav img{display:block;width:2rem;margin:0 auto;margin-top:0.5rem;}
+footer .bottomNav span{display:inline-block;margin-top:0.2rem;}
