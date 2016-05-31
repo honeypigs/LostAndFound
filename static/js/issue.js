@@ -61,6 +61,7 @@ shade.addEventListener("click",function () {
 
 window.onload = function() {
 	var ul = document.getElementsByTagName('ul');
+	var info = document.querySelectorAll(".info");
 	for (var i = 0; i < ul.length; i++) {
 		ul[i].style.listStyle = "none";
 		ul[i].style.textAlign = "center";
