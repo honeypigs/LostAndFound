@@ -1,6 +1,7 @@
 var shade = document.querySelector(".shade");
 var choice = document.querySelector("#choice");
 var list = document.querySelector(".list");
+var bottomNav = document.querySelectorAll(".bottomNav");
 
 choice.addEventListener("click",function () {
 	if (!shade.getAttribute("visable") || shade.getAttribute("visable") == "false") {
