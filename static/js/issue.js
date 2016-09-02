@@ -3,6 +3,16 @@ var infoDevice = document.querySelector(".info-device");
 var thingDevice = document.querySelector(".things-device");
 var infoItem = document.querySelector("#info-item");
 var thingsItem = document.querySelector("#things-item");
+var data = {};
+
+function hideItem () {
+	shade.style.visibility = "hidden";
+	shade.setAttribute("visable","false");
+	thingsItem.style.visibility = "hidden";
+	thingsItem.setAttribute("visable","false");
+	infoItem.style.visibility = "hidden";
+	infoItem.setAttribute("visable","false");
+}
 
 infoDevice.addEventListener("click",function () {
 	if (!shade.getAttribute("visable") || shade.getAttribute("visable") == "false") {
@@ -11,10 +21,7 @@ infoDevice.addEventListener("click",function () {
 		infoItem.style.visibility = "visible";
 		infoItem.setAttribute("visable","true");
 	} else if (shade.getAttribute("visable") == "true") {
-		shade.style.visibility = "hidden";
-		shade.setAttribute("visable","false");
-		infoItem.style.visibility = "hidden";
-		infoItem.setAttribute("visable","false");
+		hideItem();
 	}
 });
 
@@ -25,37 +32,23 @@ thingDevice.addEventListener("click",function () {
 		thingsItem.style.visibility = "visible";
 		thingsItem.setAttribute("visable","true");
 	} else if (shade.getAttribute("visable") == "true") {
-		shade.style.visibility = "hidden";
-		shade.setAttribute("visable","false");
-		thingsItem.style.visibility = "hidden";
-		thingsItem.setAttribute("visable","false");
+		hideItem();
 	}
 });
 
 thingsItem.addEventListener("click",function () {
 	if (shade.getAttribute("visable") == "true") {
-		shade.style.visibility = "hidden";
-		shade.setAttribute("visable","false");
-		thingsItem.style.visibility = "hidden";
-		thingsItem.setAttribute("visable","false");
+		hideItem();
 	}
 });
 infoItem.addEventListener("click",function () {
 	if (shade.getAttribute("visable") == "true") {
-		shade.style.visibility = "hidden";
-		shade.setAttribute("visable","false");
-		infoItem.style.visibility = "hidden";
-		infoItem.setAttribute("visable","false");
+		hideItem();
 	}
 });
 shade.addEventListener("click",function () {
 	if (shade.getAttribute("visable") == "true") {
-		shade.style.visibility = "hidden";
-		shade.setAttribute("visable","false");
-		thingsItem.style.visibility = "hidden";
-		thingsItem.setAttribute("visable","false");
-		infoItem.style.visibility = "hidden";
-		infoItem.setAttribute("visable","false");
+		hideItem();
 	}
 });
 
@@ -65,7 +58,7 @@ window.onload = function() {
 	for (var i = 0; i < ul.length; i++) {
 		ul[i].style.listStyle = "none";
 		ul[i].style.textAlign = "center";
-		console.log(ul[i]);
 	};
+
 }
  
