@@ -36,13 +36,15 @@ thingDevice.addEventListener("click",function () {
 	}
 });
 
-thingsItem.addEventListener("click",function () {
+thingsItem.addEventListener("click",function (e) {
 	if (shade.getAttribute("visable") == "true") {
+		data.infoItem = e.target.textContent;
 		hideItem();
 	}
 });
-infoItem.addEventListener("click",function () {
+infoItem.addEventListener("click",function (e) {
 	if (shade.getAttribute("visable") == "true") {
+		data.thingsItem = e.target.textContent;
 		hideItem();
 	}
 });
@@ -60,5 +62,36 @@ window.onload = function() {
 		ul[i].style.textAlign = "center";
 	};
 
+	var issue = document.querySelector('#issue');
+	var detail = document.querySelector('textarea');
+	var pickTime = document.querySelector('#picktime');
+	var place = document.querySelector('#place');
+	var phone = document.querySelector('#phone');
+	var qq = document.querySelector('#qq'); 
+	console.log(issue);
+	issue.addEventListener('click',function () {
+		
+		data.detail = detail.value;
+		data.pickTime = pickTime.value;
+		data.place = place.value;
+		data.phone = phone.value;
+		data.qq = qq.value;
+		console.log(data);
+		$.ajax({ //发送数据
+			type: 'POST',
+			url: '',
+			data: data,
+		  	// type of data we are expecting in return:
+		  	dataType: 'json',
+		  	timeout: 10000,
+		  	success: function(data){
+		  		
+		  	},
+		  	error: function(xhr, type){
+		  		alert('Ajax error!')
+		  	}
+		})
+	})
+	
 }
- 
+
