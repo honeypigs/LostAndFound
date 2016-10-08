@@ -1,6 +1,6 @@
 var shade = document.querySelector(".shade");
 var infoDevice = document.querySelector(".info-device");
-var thingDevice = document.querySelector(".things-device");
+var thingDevice = document.querySelector(".things-device");	
 var infoItem = document.querySelector("#info-item");
 var thingsItem = document.querySelector("#things-item");
 var data = {};
@@ -38,13 +38,15 @@ thingDevice.addEventListener("click",function () {
 
 thingsItem.addEventListener("click",function (e) {
 	if (shade.getAttribute("visable") == "true") {
-		data.infoItem = e.target.textContent;
+		data.category = e.target.textContent;
+		thingDevice.querySelector('.item').innerText = e.target.textContent;
 		hideItem();
 	}
 });
 infoItem.addEventListener("click",function (e) {
 	if (shade.getAttribute("visable") == "true") {
-		data.thingsItem = e.target.textContent;
+		data.property = e.target.textContent;
+		infoDevice.querySelector('.item').innerText = e.target.textContent;
 		hideItem();
 	}
 });
@@ -68,9 +70,8 @@ window.onload = function() {
 	var place = document.querySelector('#place');
 	var phone = document.querySelector('#phone');
 	var qq = document.querySelector('#qq'); 
-	console.log(issue);
 	issue.addEventListener('click',function () {
-		
+
 		data.detail = detail.value;
 		data.pickTime = pickTime.value;
 		data.place = place.value;
@@ -79,19 +80,18 @@ window.onload = function() {
 		console.log(data);
 		$.ajax({ //发送数据
 			type: 'POST',
-			url: '',
+			url: 'http://weixin.324.ist/laf/create',
 			data: data,
 		  	// type of data we are expecting in return:
 		  	dataType: 'json',
 		  	timeout: 10000,
 		  	success: function(data){
-		  		
+		  		console.log(data);
 		  	},
 		  	error: function(xhr, type){
 		  		alert('Ajax error!')
 		  	}
 		})
 	})
-	
 }
 

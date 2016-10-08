@@ -24,14 +24,15 @@ choice.addEventListener("click",function () {
 shade.addEventListener("click",function () {
 	if (shade.getAttribute("visable") == "true") {
 		hideList();
-	}
+	}	
 });
 list.addEventListener("click",function (e) {
 	if (shade.getAttribute("visable") == "true") {
 		hideList();
 		$.ajax({ //返回分类页面
 		  type: 'GET',
-		  url: '' + e.target.textContent,
+		  url: 'http://weixin.324.ist/laf/view/lost/' + e.target.textContent 
+		  + '/' + page,
 		  // type of data we are expecting in return:
 		  dataType: 'json',
 		  timeout: 10000,
@@ -51,7 +52,7 @@ window.onload = function () {
 		if ((endY - startY) > 200) {
 			$.ajax({ //返回Json数据
 				type: 'GET',
-				url: '',
+				url: 'http://weixin.324.ist/laf/view/lost/{category?}/{page?}',
 				dataType: 'json',
 				timeout: 10000,
 				success: function(data){
