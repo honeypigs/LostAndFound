@@ -89,7 +89,7 @@ window.onload = function() {
 		  		console.log(data);
 		  	},
 		  	error: function(xhr, type){
-		  		alert('Ajax error!')
+		  		alert('please wait')
 		  	}
 		})
 	})
